@@ -2,9 +2,12 @@
 
 $engines = [
     'blade',
+    'bladeone',
     'haanga',
     'huqis',
     'latte',
+    'mustache',
+    'plates',
     'smarty',
     'twig',
 ];
@@ -165,8 +168,8 @@ function runTest($engine, $test) {
 }
 
 function clearCache($engine) {
-    exec('rm -rf ' . __DIR__ . '/engines/' . $engine . '/compile');
-    exec('mkdir ' . __DIR__ . '/engines/' . $engine . '/compile');
+    exec('rm -rf ' . __DIR__ . '/engines/' . $engine . '/compile/*');
+    //exec('mkdir ' . __DIR__ . '/engines/' . $engine . '/compile');
 }
 
 function getTestFile($engine, $test) {
